@@ -33,10 +33,10 @@ var vm = new Vue({
         },
         experience:[
             {
-            "title": "Programador",skills: "skills nose1",company:"combex"
+            "title": "Programador",skills: "skills nose1",company:"-oculto-"
             },
             {
-                "title": "IT",skills: "skills nose2",company:"combex"
+                "title": "IT",skills: "skills nose2",company:"-oculto2-"
             }
         ],
         template:{
