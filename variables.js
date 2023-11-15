@@ -143,9 +143,9 @@ var vm = new Vue({
             let message;
 
             if (/android/i.test(userAgent)) {
-                message = "Accediste desde un dispositivo Android deberias de comprar un iphone mejor jeje. Visita Visita mi tienda <a href='https://bootstrap-shop-template.vercel.app/shopDinamic.html' target='_blank'>tienda</a>.";
+                message = "Accediste desde un dispositivo Android. Deberías considerar comprar un iPhone, ¡jeje! Visita mi tienda <a href='https://bootstrap-shop-template.vercel.app/shopDinamic.html' target='_blank'>tienda</a>.";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                message = "Accediste desde un dispositivo iOS pero parace no ser el mas reciente y poderoso. Visita Visita mi tienda <a href='https://bootstrap-shop-template.vercel.app/shopDinamic.html' target='_blank'>tienda</a>.";
+                message = "Accediste desde un dispositivo iOS, pero parece que no es el más reciente y poderoso. Visita mi tienda <a href='https://bootstrap-shop-template.vercel.app/shopDinamic.html' target='_blank'>tienda</a>.";
             } else {
                 message = "Accediste desde un dispositivo que no es ni Android ni iOS. Visita mi tienda <a href='https://bootstrap-shop-template.vercel.app/shopDinamic.html' target='_blank'>tienda</a>.";
             }
