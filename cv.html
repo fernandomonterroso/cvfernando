@@ -326,11 +326,37 @@
 				/* Ajusta el tamaño de la fuente si es necesario */
 				font-size: 0.3em; 
 			}
+
+			/* Estilos personalizados para el botón */
+			#scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #bd5d38;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #scrollToTop:hover {
+            background-color: #0056b3;
+        }
 		</style>
 
 	</head>
 
 	<body id="page-top">
+
+		<!-- Botón de desplazamiento suave -->
+		<button id="scrollToTop" class="position-fixed"  @click="scrollToTop">
+			<i class="fas fa-arrow-up"></i>
+		</button>
 		<!-- Navigation-->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -517,6 +543,14 @@
 			}),
 			e("body").scrollspy({ target: "#sideNav" })
 	}(jQuery);
+
+	window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById('scrollToTop').style.display = 'block';
+        } else {
+            document.getElementById('scrollToTop').style.display = 'none';
+        }
+    };
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>

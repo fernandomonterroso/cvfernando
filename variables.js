@@ -138,6 +138,12 @@ var vm = new Vue({
             return Object.keys(this.skills);
         }
     }, methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        },
         detectMobileDevice() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             let message;
@@ -159,10 +165,10 @@ var vm = new Vue({
         }
 
     }, init() {
-        
-    },ready: function() {
+
+    }, ready: function () {
         this.detectMobileDevice();
-        
-      }
+
+    }
 });
 
