@@ -4,6 +4,7 @@
 
 	<head>
 		<link rel="icon" type="image/png" href="logo.png">
+		<link rel="stylesheet" href="style.css">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<meta name="description" content="" />
@@ -294,11 +295,12 @@
 				display: flex;
 				align-items: center;
 				padding: 5rem 1rem;
-				max-width: 75rem
+				max-width: 75rem;
+				
 			}
 
 			section.resume-section .resume-section-content {
-				width: 100%
+				width: 100%;
 			}
 
 			@media(min-width:768px) {
@@ -343,10 +345,11 @@
 			cursor: pointer;
 			transition: background-color 0.3s ease;
 			align-items: center;
+			z-index: 999;
 		}
 
         #scrollToTop:hover {
-            background-color: #0056b3;
+            background-color: #ffdc00;
         }
 
 		.centered {
@@ -411,6 +414,7 @@
 			<!-- About-->
 			<section class="resume-section" id="about">
 				<div class="resume-section-content">
+					
 					<h1 class="mb-0">
 						{{ resume.personal.name }}
 						<span class="text-primary">{{ resume.personal.surname }}</span>
@@ -430,6 +434,7 @@
 							<i :class="'fab fa-' + link.name"></i>
 						</a>
 					</div>
+					<img src="./src/img/cubo.png" class="sticker home-10" alt="">
 				</div>
 			</section>
 			<hr class="m-0" />
@@ -453,6 +458,7 @@
 							</div>
 						</div>
 					</div>
+					<img src="./src/img/cubo_largo_rig_sombra.png" class="sticker home-8" alt="">
 				</div>
 			</section>
 			<hr class="m-0" />
@@ -476,6 +482,7 @@
 							</div>
 						</div>
 					</div>
+					<img src="./src/img/cubo_largo.png" class="sticker home-03" alt="">
 				</div>
 			</section>
 
@@ -568,3 +575,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="variables.js?v=1.0.2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="face.js"></script>

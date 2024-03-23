@@ -26,8 +26,8 @@ var vm = new Vue({
                 email: 'elmerfer_mejor@hotmail.com',
                 address: 'GUATEMALA',
                 web: 'webnodispo.com',
-                telephone: "+502 4129XXXX",
-                introduction: 'Programador Senior 😎',
+                telephone: "(+502) 4129XXXX",
+                introduction: 'PROGRAMADOR SR 😎',
                 experience: 'ss'
             },
         }, socialLinks: [
