@@ -40,11 +40,22 @@ var vm = new Vue({
     ],
     experiencia: [
       {
+        company: "SAMSUNG | SLCTrade",
+        startDate: "2024/06",
+        endDate: "present",
+        title: "Programador Senior",
+        description:
+          "Senior Programmer. develop and maintain high quality software applications for Central America and Caribbean countries.",
+        ubicacion: "Guatemala",
+        modalidad: "Híbrido",
+      },
+      {
         company: "COMBEX-IM | Depósito Aduanero Temporal",
         startDate: "2023/01",
-        endDate: "present",
-        title: "Programador Sénior",
-        description: "Analista de programación",
+        endDate: "2024/06",
+        title: "Programador Senior",
+        description:
+          "Experto en soluciones de sistemas aduanales y administrativos.",
         ubicacion: "Guatemala",
         modalidad: "Híbrido",
       },
@@ -113,7 +124,7 @@ var vm = new Vue({
     skills: {
       languages: [
         "python",
-        "javascript",
+        "js",
         "java",
         "c#",
         "c++",
@@ -121,24 +132,21 @@ var vm = new Vue({
         "typescript",
         "swift",
         "kotlin",
-        "scala",
-        "go",
+        "golang",
         "rust",
       ],
       frameworks: [
         "django",
         "react",
         "angular",
-        "vue.js",
+        "vuejs",
         "express",
         "laravel",
         "spring",
         "asp.net",
-        "ember.js",
-        "backbone.js",
+        "ember",
         "bootstrap",
-        "tailwind css",
-        "foundation",
+        "tailwind",
         "ionic",
         "react native",
         "flutter",
@@ -176,12 +184,26 @@ var vm = new Vue({
           "Accediste desde un dispositivo iOS, pero parece que no es el más reciente y poderoso. Visita mi <a href='https://bootstrap-shop-template.vercel.app/shopDinamic.html' target='_blank'>tienda presionando aquí</a> para comprar uno.";
       } else {
         message =
-          "Accediste desde un dispositivo que no es ni Android ni iOS. Visita mi tienda <a href='https://bootstrap-shop-template.vercel.app/shopDinamic.html' target='_blank'>tienda presionando aquí</a> para comprar uno.";
+          "Accediste desde un dispositivo que no es ni Android ni iOS, a lo mejor es una PC, compra un iphone mejor. Visita mi tienda <a href='https://bootstrap-shop-template.vercel.app/shopDinamic.html' target='_blank'>tienda presionando aquí</a> para comprar uno.";
+      }
+
+      // Obtener todos los scripts en el documento
+      var scripts = document.getElementsByTagName("script");
+      var version = "1.0.0";
+      // Iterar sobre los scripts para encontrar el que tiene 'variables.js'
+      for (var i = 0; i < scripts.length; i++) {
+        var src = scripts[i].getAttribute("src");
+        if (src && src.includes("variables.js")) {
+          // Extraer la parte después de '?v='
+          version = src.split("?v=")[1];
+        }
       }
 
       Swal.fire({
         title: "Ey ey ey mamallema",
-        html: message,
+        html: `${message}
+            <hr/>
+            <p><small>The content is licensed under a Creative Commons Attribution-ShareAlike ${version}</small></p>`,
         icon: "info",
         confirmButtonText: "Cerrar",
       });
@@ -190,5 +212,8 @@ var vm = new Vue({
   init() {},
   ready: function () {
     this.detectMobileDevice();
+    document.getElementById("loadingBlock").style.display = "none";
+    document.getElementById("sideNav").style.display = "flex";
+    document.getElementById("elementos").style.display = "block";
   },
 });

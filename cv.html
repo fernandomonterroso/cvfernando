@@ -1,581 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<div id="app">
-
-	<head>
-		<link rel="icon" type="image/png" href="logo.png">
-		<link rel="stylesheet" href="style.css">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<meta name="description" content="" />
-		
-		<meta name="author" content="" />
-		<title>{{ resume.personal.name }}
-			{{ resume.personal.surname }}</title>
-		<!-- Font Awesome icons (free version)-->
-		<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-		<!-- Google fonts-->
-		<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet"
-			type="text/css" />
-		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-		<style>
-			body {
-				font-family: Muli, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-				font-size: 1rem;
-				font-weight: 400;
-				line-height: 1.5;
-				color: #212529;
-				text-align: left
-			}
-
-			.h1,
-			.h2,
-			.h3,
-			.h4,
-			.h5,
-			.h6,
-			h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6 {
-				margin-bottom: .5rem;
-				font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-				font-weight: 700;
-				line-height: 1.2;
-				color: #343a40
-			}
-
-			.h1,
-			h1 {
-				font-size: 6rem
-			}
-
-			.text-primary {
-				color: #bd5d38 !important
-			}
-
-			.bg-primary {
-				background-color: #bd5d38 !important
-			}
-
-			a:hover {
-				color: #824027;
-				text-decoration: underline
-			}
-
-			a {
-				color: #bd5d38;
-				text-decoration: none;
-				background-color: transparent
-			}
-
-			@media print {
-
-				*,
-				::after,
-				::before {
-					text-shadow: none !important;
-					box-shadow: none !important
-				}
-
-				a:not(.btn) {
-					text-decoration: underline
-				}
-
-				abbr[title]::after {
-					content: " (" attr(title) ")"
-				}
-
-				pre {
-					white-space: pre-wrap !important
-				}
-
-				blockquote,
-				pre {
-					border: 1px solid #adb5bd;
-					page-break-inside: avoid
-				}
-
-				thead {
-					display: table-header-group
-				}
-
-				img,
-				tr {
-					page-break-inside: avoid
-				}
-
-				h2,
-				h3,
-				p {
-					orphans: 3;
-					widows: 3
-				}
-
-				h2,
-				h3 {
-					page-break-after: avoid
-				}
-
-				@page {
-					size: a3
-				}
-
-				body {
-					min-width: 992px !important
-				}
-
-				.container {
-					min-width: 992px !important
-				}
-
-				.navbar {
-					display: none
-				}
-
-				.badge {
-					border: 1px solid #000
-				}
-
-				.table {
-					border-collapse: collapse !important
-				}
-
-				.table td,
-				.table th {
-					background-color: #fff !important
-				}
-
-				.table-bordered td,
-				.table-bordered th {
-					border: 1px solid #dee2e6 !important
-				}
-
-				.table-dark {
-					color: inherit
-				}
-
-				.table-dark tbody+tbody,
-				.table-dark td,
-				.table-dark th,
-				.table-dark thead th {
-					border-color: #dee2e6
-				}
-
-				.table .thead-dark th {
-					color: inherit;
-					border-color: #dee2e6
-				}
-			}
-
-			body {
-				padding-top: 3.375rem;
-				color: #6c757d
-			}
-
-			@media(min-width:992px) {
-				body {
-					padding-top: 0;
-					padding-left: 17rem
-				}
-			}
-
-			h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6 {
-				text-transform: uppercase
-			}
-
-			h1 {
-				line-height: 1
-			}
-
-			p.lead {
-				font-size: 1.15rem;
-				font-weight: 400
-			}
-
-			.subheading {
-				font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-				text-transform: uppercase;
-				font-weight: 500;
-				font-size: 1.5rem
-			}
-
-			#sideNav .navbar-nav .nav-item .nav-link {
-				font-weight: 800;
-				letter-spacing: .05rem;
-				text-transform: uppercase
-			}
-
-			#sideNav .navbar-toggler:focus {
-				outline-color: #d48a6e
-			}
-
-			@media(min-width:992px) {
-				#sideNav {
-					text-align: center;
-					position: fixed;
-					top: 0;
-					left: 0;
-					display: flex;
-					flex-direction: column;
-					width: 17rem;
-					height: 100vh
-				}
-
-				#sideNav .navbar-brand {
-					display: flex;
-					margin: auto auto 0;
-					padding: .5rem
-				}
-
-				#sideNav .navbar-brand .img-profile {
-					max-width: 10rem;
-					max-height: 10rem;
-					border: .5rem solid rgba(255, 255, 255, .2)
-				}
-
-				#sideNav .navbar-collapse {
-					display: flex;
-					align-items: flex-start;
-					flex-grow: 0;
-					width: 100%;
-					margin-bottom: auto
-				}
-
-				#sideNav .navbar-collapse .navbar-nav {
-					flex-direction: column;
-					width: 100%
-				}
-
-				#sideNav .navbar-collapse .navbar-nav .nav-item {
-					display: block
-				}
-
-				#sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
-					display: block
-				}
-			}
-
-			.social-icons .social-icon {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				height: 3.5rem;
-				width: 3.5rem;
-				background-color: #495057;
-				color: #fff;
-				border-radius: 100%;
-				font-size: 1.5rem;
-				margin-right: 1.5rem
-			}
-
-			.social-icons .social-icon:last-child {
-				margin-right: 0
-			}
-
-			.social-icons .social-icon:hover {
-				background-color: #bd5d38
-			}
-
-			.dev-icons {
-				font-size: 3rem
-			}
-
-			section.resume-section {
-				display: flex;
-				align-items: center;
-				padding: 5rem 1rem;
-				max-width: 75rem;
-				
-			}
-
-			section.resume-section .resume-section-content {
-				width: 100%;
-			}
-
-			@media(min-width:768px) {
-				section.resume-section {
-					min-height: 100vh
-				}
-			}
-
-			@media(min-width:992px) {
-				section.resume-section {
-					padding: 5rem 3rem
-				}
-			}
-
-			pre {
-				white-space: pre-wrap;
-			}
-
-			.skill-name {
-				display: block;
-				/* Asegura que el texto aparezca debajo del icono */
-				margin-top: 4px;
-				/* Ajusta el espacio entre el icono y el texto */
-				font-size: smaller;
-				/* Ajusta el tamaño de la fuente si es necesario */
-				font-size: 0.3em; 
-			}
-
-			/* Estilos personalizados para el botón */
-		#scrollToTop {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			display: none;
-			background-color: #bd5d38;
-			border: none;
-			border-radius: 50%;
-			width: 50px;
-			height: 50px;
-			color: #fff;
-			font-size: 24px;
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-			align-items: center;
-			z-index: 999;
-		}
-
-        #scrollToTop:hover {
-            background-color: #ffdc00;
-        }
-
-		.centered {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-	margin-top: calc(50% - 15px);
-    display: flex;
-  }
-		</style>
-
-	</head>
-
-	<body id="page-top">
-
-		<!-- Botón de desplazamiento suave -->
-		<!-- @click="scrollToTop" -->
-		<a id="scrollToTop" class="js-scroll-trigger" href="#page-top" >
-			<i class="centered fas fa-arrow-up"></i>
-		</a>
-		<!-- Navigation-->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">
-				<span class="d-block d-lg-none">{{ resume.personal.name }}
-					{{ resume.personal.surname }}</span>
-				<span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-						src="{{ resume.personal.image }}" alt="" /></span>
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#about">About</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#education">Education</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-					</li>
-
-					<!-- <li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-					</li> -->
-
-				</ul>
-			</div>
-		</nav>
-		<!-- Page Content-->
-		<div class="container-fluid p-0">
-			<!-- About-->
-			<section class="resume-section column-padding" id="about">
-				<div class="resume-section-content">
-					
-					<h1 class="mb-0">
-						{{ resume.personal.name }}
-						<span class="text-primary">{{ resume.personal.surname }}</span>
-					</h1>
-					<div class="subheading mb-5">
-						{{ resume.personal.address }}
-						·
-						{{ resume.personal.telephone }}
-						·
-						<a href="mailto:{{ resume.personal.email }} ">{{ resume.personal.email }}
-						</a>
-					</div>
-					<pre class="lead mb-5">{{ resume.personal.introduction }}
-					</pre>
-					<div class="social-icons">
-						<a v-for="link in socialLinks" :key="link.name" class="social-icon" :href="link.url">
-							<i :class="'fab fa-' + link.name"></i>
-						</a>
-					</div>
-					<img src="./src/img/cubo_21.png" class="sticker home-10" alt="">
-				</div>
-			</section>
-			<hr class="m-0" />
-
-			<!-- Experience-->
-			<section class="resume-section column-padding" id="experience">
-				<div class="resume-section-content">
-					<h2 class="mb-5">Experience</h2>
-					<div v-for="experience in experiencia" :key="experience.startDate">
-						<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-							<div class="flex-grow-1">
-								<h3 class="mb-0">{{ experience.title }}</h3>
-								<div class="subheading mb-3">{{ experience.company }}</div>
-								<pre>{{ experience.description }}</pre>
-							</div>
-							<div class="flex-shrink-0">
-								<span class="text-primary">
-									{{ experience.startDate | date("M Y") }} -
-									{{ experience.endDate | date("M Y") | default('Present') }}
-								</span>
-							</div>
-						</div>
-					</div>
-					<img src="./src/img/cubo_largo_rig_sombra.png" class="sticker home-10" alt="">
-				</div>
-			</section>
-			<hr class="m-0" />
-
-			<!-- Education-->
-			<section class="resume-section column-padding" id="education">
-				<div class="resume-section-content">
-					<h2 class="mb-5">Education</h2>
-					<div v-for="education in educacion" :key="education.startDate">
-						<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-							<div class="flex-grow-1">
-								<h3 class="mb-0">{{ education.institution }}</h3>
-								<div class="subheading mb-3">{{ education.title }}</div>
-								<div>{{ education.introduction }}</div>
-							</div>
-							<div class="flex-shrink-0">
-								<span class="text-primary">
-									{{ education.startDate | date("M Y") }} -
-									{{ education.endDate | date("M Y") }}
-								</span>
-							</div>
-						</div>
-					</div>
-					<img src="./src/img/cubo_largo.png" class="sticker home-10" alt="">
-				</div>
-			</section>
-
-			<hr class="m-0" />
-
-			<section class="resume-section column-padding" id="skills">
-				<div class="resume-section-content">
-					<h2 class="mb-5">Skills</h2>
-
-					<div v-for="skillKey in skillKeys" :key="skillKey">
-						<div class="subheading mb-3">{{ skillKey }}</div>
-						<ul class="list-inline dev-icons">
-							<li class="list-inline-item text-center" v-for="item in skills[skillKey]" :key="item">
-								<i :class="'fab fa-' + item"></i>
-								<span class="skill-name">{{ item }}</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-
-
-
-			<hr class="m-0" />
-
-
-
-			<hr class="m-0" />
-
-			<!-- Awards-->
-			<!-- <section class="resume-section" id="awards">
-				<div class="resume-section-content">
-					<h2 class="mb-5">Awards & Certifications</h2>
-					<ul class="fa-ul mb-0">
-						{% for award in resume.awards %}
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-trophy text-warning"></i>
-							</span>
-							{{ award }}
-						</li>
-						{% endfor %}
-					</ul>
-				</div>
-			</section> -->
-
-		</div>
-		<!-- Bootstrap core JS-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-		<!-- Third party plugin JS-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-		<!-- Core theme JS-->
-		{% verbatim %}
-
-</div>
-{% endverbatim %}
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ resume.personal.name }} {{ resume.personal.surname }}</title>
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.6.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="page-top">
+    <div id="app">
+      <div
+        id="loadingBlock"
+        style="
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.8);
+          z-index: 1000;
+          text-align: center;
+          padding: 20px;
+        "
+      >
+        <h1 class="mb-0" style="margin-bottom: 0; color: #ffffff">
+          Fernando
+          <span style="color: #19d1ff">Monterroso</span>
+        </h1>
+        <img
+          src="https://avatars.githubusercontent.com/u/49045198?v=4"
+          alt=""
+          style="
+            width: 100px;
+            height: 100px;
+            animation: spin 2s linear infinite;
+          "
+        />
+      </div>
+
+      <!-- Botón de desplazamiento suave -->
+      <!-- @click="scrollToTop" -->
+      <a id="scrollToTop" class="js-scroll-trigger" href="#page-top">
+        <i class="centered fas fa-arrow-up"></i>
+      </a>
+      <!-- Navigation-->
+      <nav
+        style="
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          text-align: center;
+        "
+        class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
+        id="sideNav"
+      >
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <span class="d-block d-lg-none">
+            {{ resume.personal.name }} {{ resume.personal.surname }}
+          </span>
+          <span class="d-none d-lg-block">
+            <img
+              class="img-fluid img-profile rounded-circle mx-auto mb-2"
+              src="{{ resume.personal.image }}"
+              alt=""
+              style="max-width: 150px"
+              <!--
+              Ajusta
+              el
+              tamaño
+              de
+              la
+              imagen
+              según
+              sea
+              necesario
+              --
+            />
+          </span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+          style="width: 100%"
+        >
+          <ul class="navbar-nav" style="width: 100%; padding: 0">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#experience"
+                >Experience</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#education"
+                >Education</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Page Content-->
+      <div class="container-fluid p-0" id="elementos" style="display: none">
+        <!-- About-->
+        <section class="resume-section column-padding" id="about">
+          <div class="resume-section-content">
+            <h1 class="mb-0">
+              {{ resume.personal.name }}
+              <span class="text-primary">{{ resume.personal.surname }}</span>
+            </h1>
+            <div class="subheading mb-5">
+              {{ resume.personal.address }} · {{ resume.personal.telephone }} ·
+              <a href="mailto:{{ resume.personal.email }} "
+                >{{ resume.personal.email }}
+              </a>
+            </div>
+            <pre class="lead mb-5">
+{{ resume.personal.introduction }}
+                </pre
+            >
+            <div class="social-icons">
+              <a
+                v-for="link in socialLinks"
+                :key="link.name"
+                class="social-icon"
+                :href="link.url"
+              >
+                <i :class="'fab fa-' + link.name"></i>
+              </a>
+            </div>
+            <img src="./src/img/cubo_21.png" class="sticker home-10" alt="" />
+          </div>
+        </section>
+        <hr class="m-0" />
+
+        <!-- Experience-->
+        <section class="resume-section column-padding" id="experience">
+          <div class="resume-section-content">
+            <h2 class="mb-5">Experience</h2>
+            <div v-for="experience in experiencia" :key="experience.startDate">
+              <div
+                class="d-flex flex-column flex-md-row justify-content-between mb-5"
+              >
+                <div class="flex-grow-1">
+                  <h3 class="mb-0">{{ experience.title }}</h3>
+                  <div class="subheading mb-3">{{ experience.company }}</div>
+                  <pre>{{ experience.description }}</pre>
+                </div>
+                <div class="flex-shrink-0">
+                  <span class="text-primary">
+                    {{ experience.startDate | date("M Y") }} - {{
+                    experience.endDate | date("M Y") | default('Present') }}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="./src/img/cubo_largo_rig_sombra.png"
+              class="sticker home-10"
+              alt=""
+            />
+          </div>
+        </section>
+        <hr class="m-0" />
+
+        <!-- Education-->
+        <section class="resume-section column-padding" id="education">
+          <div class="resume-section-content">
+            <h2 class="mb-5">Education</h2>
+            <div v-for="education in educacion" :key="education.startDate">
+              <div
+                class="d-flex flex-column flex-md-row justify-content-between mb-5"
+              >
+                <div class="flex-grow-1">
+                  <h3 class="mb-0">{{ education.institution }}</h3>
+                  <div class="subheading mb-3">{{ education.title }}</div>
+                  <div>{{ education.introduction }}</div>
+                </div>
+                <div class="flex-shrink-0">
+                  <span class="text-primary">
+                    {{ education.startDate | date("M Y") }} - {{
+                    education.endDate | date("M Y") }}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="./src/img/cubo_largo.png"
+              class="sticker home-10"
+              alt=""
+            />
+          </div>
+        </section>
+
+        <hr class="m-0" />
+
+        <section class="resume-section column-padding" id="skills">
+          <div class="resume-section-content">
+            <h2 class="mb-5">Skills</h2>
+
+            <div v-for="skillKey in skillKeys" :key="skillKey">
+              <div class="subheading mb-3">{{ skillKey }}</div>
+              <ul class="list-inline dev-icons">
+                <li
+                  class="list-inline-item text-center"
+                  v-for="item in skills[skillKey]"
+                  :key="item"
+                >
+                  <i :class="'fab fa-' + item"></i>
+                  <span class="skill-name">{{ item }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <hr class="m-0" />
+
+        <hr class="m-0" />
+      </div>
+      <!-- Bootstrap core JS-->
+    </div>
+  </body>
 </html>
-<script>
-	!function (e) {
-		"use strict";
-		e('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
-			if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
-				var t = e(this.hash);
-				if ((t = t.length ? t : e("[name=" + this.hash.slice(1) + "]")).length)
-					return e("html, body").animate({
-						scrollTop: t.offset().top
-					}, 1e3, "easeInOutExpo"),
-						!1
 
-			}
-		}),
-			e(".js-scroll-trigger").click(function () {
-				e(".navbar-collapse").collapse("hide")
-			}),
-			e("body").scrollspy({ target: "#sideNav" })
-	}(jQuery);
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
 
-	window.onscroll = function () {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById('scrollToTop').style.display = 'block';
-        } else {
-            document.getElementById('scrollToTop').style.display = 'none';
-        }
-    };
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+<script src="libs/vuejs1-0-18.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="variables.js?v=1.0.2"></script>
+<script src="variables.js?v=2.0.2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="face.js"></script>

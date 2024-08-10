@@ -1,3 +1,353 @@
+body {
+  font-family: Muli, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: .5rem;
+  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  line-height: 1.2;
+  color: #343a40
+}
+
+.h1,
+h1 {
+  font-size: 6rem
+}
+
+.text-primary {
+  color: #bd5d38 !important
+}
+
+.bg-primary {
+  background-color: #bd5d38 !important
+}
+
+a:hover {
+  color: #824027;
+  text-decoration: underline
+}
+
+a {
+  color: #bd5d38;
+  text-decoration: none;
+  background-color: transparent
+}
+
+@media print {
+
+  *,
+  ::after,
+  ::before {
+    text-shadow: none !important;
+    box-shadow: none !important
+  }
+
+  a:not(.btn) {
+    text-decoration: underline
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")"
+  }
+
+  pre {
+    white-space: pre-wrap !important
+  }
+
+  blockquote,
+  pre {
+    border: 1px solid #adb5bd;
+    page-break-inside: avoid
+  }
+
+  thead {
+    display: table-header-group
+  }
+
+  img,
+  tr {
+    page-break-inside: avoid
+  }
+
+  h2,
+  h3,
+  p {
+    orphans: 3;
+    widows: 3
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid
+  }
+
+  @page {
+    size: a3
+  }
+
+  body {
+    min-width: 992px !important
+  }
+
+  .container {
+    min-width: 992px !important
+  }
+
+  .navbar {
+    display: none
+  }
+
+  .badge {
+    border: 1px solid #000
+  }
+
+  .table {
+    border-collapse: collapse !important
+  }
+
+  .table td,
+  .table th {
+    background-color: #fff !important
+  }
+
+  .table-bordered td,
+  .table-bordered th {
+    border: 1px solid #dee2e6 !important
+  }
+
+  .table-dark {
+    color: inherit
+  }
+
+  .table-dark tbody+tbody,
+  .table-dark td,
+  .table-dark th,
+  .table-dark thead th {
+    border-color: #dee2e6
+  }
+
+  .table .thead-dark th {
+    color: inherit;
+    border-color: #dee2e6
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  padding-top: 3.375rem;
+  color: #6c757d
+}
+
+@media(min-width:992px) {
+  body {
+    padding-top: 0;
+    padding-left: 17rem
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase
+}
+
+h1 {
+  line-height: 1
+}
+
+p.lead {
+  font-size: 1.15rem;
+  font-weight: 400
+}
+
+.subheading {
+  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.5rem
+}
+
+#sideNav .navbar-nav .nav-item .nav-link {
+  font-weight: 800;
+  letter-spacing: .05rem;
+  text-transform: uppercase
+}
+
+#sideNav .navbar-toggler:focus {
+  outline-color: #d48a6e
+}
+
+@media(min-width:992px) {
+  #sideNav {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    height: 100vh
+  }
+
+  #sideNav .navbar-brand {
+    display: flex;
+    margin: auto auto 0;
+    padding: .5rem
+  }
+
+  #sideNav .navbar-brand .img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: .5rem solid rgba(255, 255, 255, .2)
+  }
+
+  #sideNav .navbar-collapse {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 0;
+    width: 100%;
+    margin-bottom: auto
+  }
+
+  #sideNav .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    width: 100%
+  }
+
+  #sideNav .navbar-collapse .navbar-nav .nav-item {
+    display: block
+  }
+
+  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+    display: block
+  }
+}
+
+.social-icons .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: #495057;
+  color: #fff;
+  border-radius: 100%;
+  font-size: 1.5rem;
+  margin-right: 1.5rem
+}
+
+.social-icons .social-icon:last-child {
+  margin-right: 0
+}
+
+.social-icons .social-icon:hover {
+  background-color: #bd5d38
+}
+
+.dev-icons {
+  font-size: 3rem
+}
+
+section.resume-section {
+  display: flex;
+  align-items: center;
+  padding: 5rem 1rem;
+  max-width: 75rem;
+  
+}
+
+section.resume-section .resume-section-content {
+  width: 100%;
+}
+
+@media(min-width:768px) {
+  section.resume-section {
+    min-height: 100vh
+  }
+}
+
+@media(min-width:992px) {
+  section.resume-section {
+    padding: 5rem 3rem
+  }
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.skill-name {
+  display: block;
+  /* Asegura que el texto aparezca debajo del icono */
+  margin-top: 4px;
+  /* Ajusta el espacio entre el icono y el texto */
+  font-size: smaller;
+  /* Ajusta el tamaño de la fuente si es necesario */
+  font-size: 0.3em; 
+}
+
+/* Estilos personalizados para el botón */
+#scrollToTop {
+position: fixed;
+bottom: 20px;
+right: 20px;
+display: none;
+background-color: #bd5d38;
+border: none;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+color: #fff;
+font-size: 24px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+align-items: center;
+z-index: 999;
+}
+
+  #scrollToTop:hover {
+      background-color: #ffdc00;
+  }
+
+.centered {
+text-align: center;
+justify-content: center;
+align-items: center;
+margin-left: auto;
+margin-right: auto;
+margin-top: calc(50% - 15px);
+display: flex;
+}
+
+
 img {
   max-width: 100%;
   vertical-align: middle;
