@@ -203,7 +203,7 @@ var vm = new Vue({
         title: "Ey ey ey mamallema",
         html: `${message}
             <hr/>
-            <p><small>The content is licensed under a Creative Commons Attribution-ShareAlike ${version}</small></p>`,
+            <p><small>The content is licensed under a Creative ${version}</small></p>`,
         icon: "info",
         confirmButtonText: "Cerrar",
       });
